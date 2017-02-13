@@ -1,0 +1,47 @@
+<etl>
+	<connection id="db1" url="jdbc:mysql://localhost:3306/hibernate"
+		user="root" password="anubhav" driver="auto"/>
+
+	<script>
+		CREATE TABLE version (
+		buildnum int primary key,
+		major int unique,
+		minor int unique
+		);
+		INSERT INTO version
+		VALUES (1,0,0);
+
+		<!-- If table version already exists, skip schema creation 
+			and continue -->
+		<onerror message=".*version.*" />
+	</script>
+	<query id="db1">
+		<!-- Selects current DB build -->
+		SELECT * FROM version
+		<script if="buildnum eq 1 and major eq 0 and minor eq 0">
+			<!-- upgrade scripts for subsequent builds -->
+			<include href="buildnum_1.0.0.sql" />
+			UPDATE version SET minor=1
+		</script>
+	</query>
+	<query>
+	<!-- Selects current DB build -->
+		SELECT * FROM version
+		<script if="buildnum eq 1 and major eq 0 and minor eq 1">
+			<!-- upgrade scripts for subsequent builds -->
+			<include href="buildnum_1.0.1.sql" />
+			UPDATE version SET minor=2
+		</script>
+	</query>
+	<query>
+	<!-- Selects current DB build -->
+		SELECT * FROM version
+		<script if="buildnum eq 1 and major eq 0 and minor eq 2">
+			<!-- upgrade scripts for subsequent builds -->
+			<include href="buildnum_1.0.2.sql" />
+			UPDATE version SET minor=3
+		</script>
+	</query>
+
+
+</etl>
