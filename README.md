@@ -29,5 +29,5 @@ In past I have implemented a similar strategy using a project:
 
 http://scriptella.org/
 
-The application 'DB Versioning' consists of a simple use case to maintain database version.  
+The application 'DB Versioning' aims at providing a POC and consists of a simple use case to maintain database version.  
 
