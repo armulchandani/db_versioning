@@ -1,3 +1,5 @@
+**The application 'DB Versioning' aims at providing a POC and consists of a simple use case to maintain database version.**
+
 In my experience, I have observed that all applications, be it web based or non-web based deals with some kind of data storage mechanism may be RDBMS or NoSql. These applications may be simple or complex, it all depends upon the domain.
 
 
@@ -35,8 +37,10 @@ In past I have implemented the aforementioned library to manage database version
 
 # 2. [Flyway](https://flywaydb.org/) 
 
+[Why database versioning]( https://flywaydb.org/getstarted/why) just confirmed my thoughts.
 
 
 
-The application 'DB Versioning' aims at providing a POC and consists of a simple use case to maintain database version.  
+
+  
 
