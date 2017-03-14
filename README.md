@@ -28,14 +28,14 @@ This article aims at eliminating step 2 & 4 by maintaining a DB version and auto
 There are various ways to implement database versioning.
 
 
-1. http://scriptella.org/
+# 1. [Scriptella]( http://scriptella.org/)
 
 In past I have implemented the aforementioned library to manage database versions.
 
 
-2. Flyway 
+# 2. [Flyway](https://flywaydb.org/) 
 
-https://flywaydb.org/
+
 
 
 The application 'DB Versioning' aims at providing a POC and consists of a simple use case to maintain database version.  
